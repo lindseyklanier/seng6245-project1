@@ -53,7 +53,8 @@ public class Pitch {
      * For example, new Pitch('C') constructs middle C 
      */
     public Pitch(char c) {
-    	int index = c - 'A';
+    	int index = c - 'A'; //ASCII Value for A is 65
+    	//System.out.println("Index is " + index + "Char is: " + c);
     	if (index < 0 || index >= scale.length)
     		throw new IllegalArgumentException(c + " must be in the range A-G");
         
@@ -84,7 +85,7 @@ public class Pitch {
      * E'; transposing E down by 1 octave produces E, .
      */
     public Pitch octaveTranspose(int octavesUp) {
-	return new Pitch(value, accidental, octave + octavesUp);
+    	return new Pitch(value, accidental, octave + octavesUp);
     }
 
     /**
