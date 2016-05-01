@@ -11,7 +11,7 @@
  * 	All fields other than 'X', 'T', and 'K' are optional, and may appear in any order.
  */
 
-package abc;
+package abcGrammars;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -35,7 +35,7 @@ public class Parser {
 			int totalLines = abc.split("\n").length;
 			//System.out.println("Total number of lines is: " + totalLines);
 			int i = 0;
-			for (String retval: abc.split("\n")){
+			for (String retval : abc.split("\n")){
 				 if(i==0 && retval.contains(":") && !retval.startsWith("X")){ System.out.println("Invalid File. The ABC File's first header token must be X (Index Number)"); break;}
 				 if(i==1 && retval.contains(":") && !retval.startsWith("T")){ System.out.println("Invalid File. The ABC File's second header token must be T (Title)"); break;}
 				 if(i==totalLines-2 && retval.contains(":") && !retval.startsWith("K")) { System.out.println("Invalid File. The ABC File's last header token must be K (Key)"); break;}
@@ -44,7 +44,7 @@ public class Parser {
 		         i++;		         
 		    }		
 			
-			lex.sendTest();
+			//lex.sendTest();
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

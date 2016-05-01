@@ -1,8 +1,8 @@
 /* This class was provided by a StackOverflow user: http://stackoverflow.com/questions/474535/best-way-to-represent-a-fraction-in-java */
 
-package abc;
+package abcGrammars;
 
-final class Fraction extends Number {
+public final class Fraction extends Number {
     private int numerator;
     private int denominator;
 
@@ -71,4 +71,12 @@ final class Fraction extends Number {
         }
         return result;
     }
+    
+    public Fraction multiply(int f) {
+
+		int num = this.numerator * f;
+		int den = this.denominator;
+
+		return new Fraction(num, den);
+	}
 }
